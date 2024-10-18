@@ -11,7 +11,7 @@
             font-family: 'Arial', sans-serif; /* Elegant font */
             text-align: center; /* Center all text */
             color: #333; /* Dark text for contrast */
-            overflow: hidden; /* Hide overflow for emoji background */
+            padding-bottom: 100px; /* Add space at the bottom for the emoji footer */
         }
         h1 {
             font-size: 3.5em;
@@ -63,10 +63,12 @@
             height: 500px;
             border-radius: 10px; /* Adds rounded corners to images */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Adds a soft shadow to the images */
-            transition: transform 0.3s; /* Smooth transition */
+            transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
         }
         img:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
+            transform: scale(1.1) rotate(2deg); /* Zoom and slight rotation on hover */
+            filter: brightness(1.1) saturate(1.2); /* Increase brightness and saturation on hover */
+            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.6); /* Enhanced shadow on hover */
         }
         p {
             font-size: 1.5em;
@@ -78,6 +80,31 @@
         }
         p:hover {
             opacity: 1; /* Brightens on hover */
+        }
+        .audio-player {
+            margin-top: 30px; /* Adds space above the audio player */
+            display: flex; /* Align buttons horizontally */
+            justify-content: center; /* Center buttons */
+            align-items: center; /* Vertically center buttons */
+        }
+        .audio-button {
+            background-color: #ff69b4; /* Pink background */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Spacing around the text */
+            font-size: 1.5em; /* Larger font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin: 0 10px; /* Spacing between buttons */
+            transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+        }
+        .audio-button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            transform: scale(1.1); /* Slightly larger on hover */
+        }
+        .emoji-container {
+            margin-top: 30px; /* Adds space above the emoji footer */
+            font-size: 30px; /* Adjusts font size of emojis */
         }
         .emoji-background {
             position: fixed;
@@ -92,12 +119,14 @@
             align-items: center;
             font-size: 50px; /* Emoji size */
             opacity: 0.1; /* Lighten the background emojis */
-            animation: float 3s infinite; /* Floating effect */
+            animation: float 4s infinite; /* Floating effect */
         }
         @keyframes float {
-            0% { transform: translatey(0); }
-            50% { transform: translatey(-10px); }
-            100% { transform: translatey(0); }
+            0% { transform: translateY(0) scale(1); }
+            25% { transform: translateY(-10px) scale(1.1); }
+            50% { transform: translateY(0) scale(1); }
+            75% { transform: translateY(10px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
         }
     </style>
 </head>
@@ -111,6 +140,16 @@
     <h1>A Love-Filled Page Just for You</h1>
     
     <p>Every moment with you feels like magic ❤️✨😊💖</p>
+
+    <div class="audio-player">
+        <button class="audio-button" id="playButton">Play</button>
+        <button class="audio-button" id="pauseButton">Pause</button>
+    </div>
+    
+    <audio id="audio" loop>
+        <source src="file:///D:/new.mp3" type="audio/mpeg"> <!-- Path to your new audio file -->
+        Your browser does not support the audio element.
+    </audio>
     
     <div class="container">
         <!-- First image (left side) -->
@@ -132,6 +171,27 @@
         🌟✨💖🎉💫🌈🌻❤️🥰😍💞💖🌼🌺🌸🌈💗🌹💘💓💝
     </div>
 
+    <script>
+        // Get the audio element and buttons
+        const audio = document.getElementById('audio');
+        const playButton = document.getElementById('playButton');
+        const pauseButton = document.getElementById('pauseButton');
+
+        // Play audio when the Play button is clicked
+        playButton.addEventListener('click', () => {
+            audio.play();
+        });
+
+        // Pause audio when the Pause button is clicked
+        pauseButton.addEventListener('click', () => {
+            audio.pause();
+        });
+
+        // Autoplay audio when the page loads
+        window.onload = () => {
+            audio.play();
+        };
+    </script>
+
 </body>
 </html>
-
