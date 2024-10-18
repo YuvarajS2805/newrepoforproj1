@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love-Filled Page for You</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ffebf0, #ffcccc); /* Gradient background */
+            font-family: 'Arial', sans-serif; /* Elegant font */
+            text-align: center; /* Center all text */
+            color: #333; /* Dark text for contrast */
+            overflow: hidden; /* Hide overflow for emoji background */
+        }
+        h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            opacity: 0.9; /* Slightly faded text */
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.8); /* Soft glow effect */
+            animation: textWave 1.5s infinite; /* Gentle wave animation */
+        }
+        @keyframes textWave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        h1:hover {
+            opacity: 1; /* Brightens on hover */
+        }
+        .container {
+            display: flex;
+            justify-content: center; /* Center the images and heart column */
+            align-items: center; /* Vertically aligns images and hearts */
+            margin-top: 50px;
+            opacity: 0.9; /* Slightly faded container */
+            transition: opacity 0.5s; /* Smooth transition */
+        }
+        .container:hover {
+            opacity: 1; /* Brightens on hover */
+        }
+        .hearts {
+            display: flex;
+            flex-direction: column; /* Align hearts vertically */
+            justify-content: center; /* Center hearts vertically between the images */
+            margin: 0 20px; /* Adds space around the heart column */
+        }
+        .heart {
+            font-size: 60px; /* Larger hearts */
+            margin: 10px 0; /* Adds space between each heart */
+            animation: pulse 1s infinite alternate; /* Adds a pulsing animation */
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.3);
+            }
+        }
+        img {
+            width: 450px;
+            height: 500px;
+            border-radius: 10px; /* Adds rounded corners to images */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Adds a soft shadow to the images */
+            transition: transform 0.3s; /* Smooth transition */
+        }
+        img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: #800000; /* Dark red text for a romantic touch */
+            opacity: 0.9; /* Slightly faded text */
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Soft red glow */
+            transition: opacity 0.5s; /* Smooth transition */
+        }
+        p:hover {
+            opacity: 1; /* Brightens on hover */
+        }
+        .emoji-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1; /* Send to background */
+            display: flex;
+            flex-wrap: wrap; /* Allow emojis to wrap */
+            justify-content: center;
+            align-items: center;
+            font-size: 50px; /* Emoji size */
+            opacity: 0.1; /* Lighten the background emojis */
+            animation: float 3s infinite; /* Floating effect */
+        }
+        @keyframes float {
+            0% { transform: translatey(0); }
+            50% { transform: translatey(-10px); }
+            100% { transform: translatey(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="emoji-background">
+        <!-- Fill the background with emojis -->
+        🌟✨💖🎉💫🌈🌻❤️🥰😍💞💖🌼🌺🌸🌈💗🌹💘💓💝💖
+    </div>
+
+    <h1>A Love-Filled Page Just for You</h1>
+    
+    <p>Every moment with you feels like magic ❤️✨😊💖</p>
+    
+    <div class="container">
+        <!-- First image (left side) -->
+        <img src="file:///D:/anuyuva.jpg" alt="My Picture">
+        
+        <!-- Hearts in the middle -->
+        <div class="hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+        </div>
+        
+        <!-- Second image (right side) -->
+        <img src="file:///D:/yuvaanu.jpg" alt="Second Picture">
+    </div>
+
+    <div class="emoji-container">
+        <!-- More emojis in the footer -->
+        🌟✨💖🎉💫🌈🌻❤️🥰😍💞💖🌼🌺🌸🌈💗🌹💘💓💝
+    </div>
+
+</body>
+</html>
+
